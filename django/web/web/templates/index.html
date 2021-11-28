@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Price</title>
+{% load static %}
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static '/index.css' %}">
+</head>
+<body>
+    <h1 class="heading">Get your car price today</h1>
+    <div class="container main">
+        
+        <div class="row">
+
+          <div class="col-lg-2 col-md-2 col-sm-">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-12 frm">
+              
+    <form action="predict" method="post">
+        {% csrf_token%}
+        <label for="location" class="location">Choose the location of your car:</label>
+        <select name="location" class="location1">
+            <option value="select">--select--</option>
+            <option value="2">Chennai</option>
+            <option value="9">Mumbai</option>
+            <option value="7">Kochi</option>
+            <option value="4">Delhi</option>
+            <option value="3">Coimbatore</option>
+            <option value="1">Bangalore</option>
+            <option value="10">Pune</option>
+            <option value="0">Ahmedabad</option>
+            <option value="8">Kolkata</option>
+            <option value="5">Hyderabad</option>
+            <option value="6">Jaipur</option>
+        </select><br/>
+        <label class="year">Purchase Year</label><input type="number" min="1" name="year" class="location1"><br/>
+
+        <label class="km">Kilometers driven</label><input type="number" min="1" name="Kl" class="location1"><br/>
+
+        <label for="Fuel">Fuel type</label>
+        <select name="fule_type" class="location1">
+            <option value="select">--select--</option>
+            <option value="2">Petrol</option>
+            <option value="1">Diesel</option>
+            <option value="0">CNG</option>
+        </select><br/>
+
+        <label class="transmission">Transmission</label>
+        <select name="transmission" class="location1">
+            <option value="select">--select--</option>
+            <option value="1">Manual</option>
+            <option value="0">Automatic</option>
+        </select><br/>
+
+        <label class="owner">Owner Type</label>
+        <select name="owner" class="location1">
+            <option value="select">--select--</option>
+            <option value="0">First Hand</option>
+            <option value="1">Second hand</option>
+            <option value="2">Third hand</option>
+        </select><br/>
+
+        <label class="mileage">Mileage:</label><input type="number" min="1"   name="Mileage" class="location1"><br/>
+
+        <label class="engine">Engine</label><input type="number" min="1" name="Engine" class="location1"><br/>
+
+        <label class="power">Power</label><input type="number" min="1" name="Power" class="location1"><br/>
+
+        <label class="seats">Seats</label><input type="number" min="1" name="Seats" class="location1"><br/>
+
+        <label class="newprice">New Price</label><input type="number" min="1" name="New_Price" class="location1"><br/>
+
+        <button type="submit" class="submit">submit</button>
+      </form>
+      <hr/>
+      </div>
+    
+      <div class="col-lg-2 col-md-2 col-sm-"></div>
+    </div>
+    <br/><br/><br/><br/>
+    <img src="{%static '/car.png'%}" alt="car" class="car img-fluid">
+</div>
+</body>
+</html>
